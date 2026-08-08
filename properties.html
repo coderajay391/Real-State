@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Browse All Properties | Modern Real Estate</title>
+  <meta name="description" content="Filter and search luxury homes, apartments, villas, and commercial real estate with real-time property filters." />
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader-spinner"></div>
+    <div class="loader-logo">Real<span>Estate</span></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fa-solid fa-building-user"></i></div>
+        <div class="logo-text">Real<span>Estate</span></div>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="properties.html" class="nav-link active">Properties</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="agents.html" class="nav-link">Agents</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+        <button class="favorites-nav-btn" aria-label="View Saved Favorites"><i class="fa-solid fa-heart"></i><span class="fav-badge">0</span></button>
+        <button class="hamburger-btn" aria-label="Toggle Mobile Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header Banner -->
+  <section style="background: linear-gradient(135deg, var(--secondary) 0%, #1E293B 100%); color: #FFFFFF; padding: 7rem 0 4rem; text-align: center; position: relative;">
+    <div class="container">
+      <h1 class="hero-title" style="font-size: 2.75rem; margin-bottom: 0.5rem;">Explore All Properties</h1>
+      <p style="color: #CBD5E1; max-width: 600px; margin: 0 auto;">Filter through our comprehensive directory of verified real estate listings with instant search.</p>
+    </div>
+  </section>
+
+  <!-- Properties Main Section -->
+  <section class="section-padding">
+    <div class="container">
+      <!-- Filter Sidebar / Bar -->
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.75rem; margin-bottom: 2.5rem; box-shadow: var(--shadow-sm);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 1rem;">
+          <h3 style="font-size: 1.25rem; display: flex; align-items: center; gap: 0.5rem;"><i class="fa-solid fa-sliders" style="color: var(--primary);"></i> Search & Filter Listings</h3>
+          <button id="resetFiltersBtn" class="btn btn-outline btn-sm"><i class="fa-solid fa-rotate-left"></i> Clear All Filters</button>
+        </div>
+
+        <div class="filter-bar-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem;">
+          <!-- Keyword Search -->
+          <div class="form-group-item">
+            <label><i class="fa-solid fa-magnifying-glass"></i> Keyword / City</label>
+            <input type="text" id="filterKeyword" class="form-control" placeholder="Search title, city, address..." style="padding-left: 1rem;" />
+          </div>
+
+          <!-- Type Select -->
+          <div class="form-group-item">
+            <label><i class="fa-solid fa-house"></i> Property Type</label>
+            <select id="filterType" class="form-control">
+              <option value="All">All Types</option>
+              <option value="Apartment">Apartment</option>
+              <option value="Villa">Villa</option>
+              <option value="Commercial">Commercial</option>
+              <option value="Office">Office</option>
+              <option value="Land">Land</option>
+              <option value="Luxury Home">Luxury Home</option>
+            </select>
+          </div>
+
+          <!-- City Select -->
+          <div class="form-group-item">
+            <label><i class="fa-solid fa-city"></i> City / Location</label>
+            <select id="filterCity" class="form-control">
+              <option value="All">All Cities</option>
+              <option value="Los Angeles">Los Angeles</option>
+              <option value="New York">New York</option>
+              <option value="San Francisco">San Francisco</option>
+              <option value="Miami">Miami</option>
+              <option value="Denver">Denver</option>
+              <option value="Austin">Austin</option>
+            </select>
+          </div>
+
+          <!-- Bedrooms -->
+          <div class="form-group-item">
+            <label><i class="fa-solid fa-bed"></i> Min Bedrooms</label>
+            <select id="filterBedrooms" class="form-control">
+              <option value="All">Any Beds</option>
+              <option value="1">1+ Beds</option>
+              <option value="2">2+ Beds</option>
+              <option value="3">3+ Beds</option>
+              <option value="4">4+ Beds</option>
+              <option value="5">5+ Beds</option>
+            </select>
+          </div>
+
+          <!-- Bathrooms -->
+          <div class="form-group-item">
+            <label><i class="fa-solid fa-bath"></i> Min Bathrooms</label>
+            <select id="filterBathrooms" class="form-control">
+              <option value="All">Any Baths</option>
+              <option value="1">1+ Baths</option>
+              <option value="2">2+ Baths</option>
+              <option value="3">3+ Baths</option>
+              <option value="4">4+ Baths</option>
+            </select>
+          </div>
+
+          <!-- Price Range Slider -->
+          <div class="form-group-item" style="grid-column: span 1;">
+            <label><i class="fa-solid fa-dollar-sign"></i> Max Price: <span id="priceValueLabel" style="color: var(--primary);">$5,000,000</span></label>
+            <input type="range" id="filterPriceRange" min="100000" max="5000000" step="100000" value="5000000" style="width: 100%; accent-color: var(--primary); height: 8px; cursor: pointer; margin-top: 0.5rem;" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Sorting Bar -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+        <div id="propertiesCountBadge" style="font-weight: 700; font-size: 1.1rem; color: var(--text-main);">
+          Loading properties...
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <label for="filterSort" style="font-weight: 600; font-size: 0.9rem; color: var(--text-muted);">Sort By:</label>
+          <select id="filterSort" class="form-control" style="width: 180px; padding-left: 0.85rem;">
+            <option value="latest">Latest First</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Property Grid Container -->
+      <div id="propertiesGrid" class="property-grid">
+        <!-- Rendered by js/filter.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo footer-logo">
+            <div class="logo-icon"><i class="fa-solid fa-building-user"></i></div>
+            <div class="logo-text">Real<span>Estate</span></div>
+          </a>
+          <p class="footer-desc">Your trusted real estate partner for luxury residential villas, penthouses, commercial headquarters, and land investments worldwide.</p>
+        </div>
+        <div>
+          <h4 class="footer-column-title">Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="properties.html">Featured Properties</a>
+            <a href="about.html">About Company</a>
+            <a href="agents.html">Meet Our Agents</a>
+            <a href="contact.html">Contact Us</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-column-title">Property Types</h4>
+          <div class="footer-links">
+            <a href="properties.html?type=Apartment">Luxury Apartments</a>
+            <a href="properties.html?type=Villa">Modern Villas</a>
+            <a href="properties.html?type=Commercial">Commercial Assets</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-column-title">Contact Info</h4>
+          <div class="contact-info-list">
+            <div class="contact-info-item"><i class="fa-solid fa-location-dot"></i><span>500 Wilshire Blvd, Beverly Hills, CA 90210</span></div>
+            <div class="contact-info-item"><i class="fa-solid fa-phone"></i><span>+1 (800) 555-REAL</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 RealEstate Inc. All rights reserved. Built with HTML5, CSS3 & Vanilla JavaScript.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Favorites Wishlist Modal -->
+  <div id="favoritesModal" class="modal-overlay">
+    <div class="modal-container" style="max-width: 900px;">
+      <button class="modal-close-btn" aria-label="Close Wishlist Modal"><i class="fa-solid fa-xmark"></i></button>
+      <h2 style="margin-bottom: 0.5rem;"><i class="fa-solid fa-heart" style="color: #EF4444;"></i> Saved Favorite Properties</h2>
+      <div id="favoritesGrid" class="property-grid" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));"></div>
+    </div>
+  </div>
+
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script type="module">
+    import './js/app.js';
+    import { initPropertiesPage } from './js/filter.js';
+    document.addEventListener('DOMContentLoaded', () => {
+      initPropertiesPage();
+    });
+  </script>
+</body>
+</html>

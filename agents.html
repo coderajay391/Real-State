@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meet Our Trusted Real Estate Agents | Modern Real Estate</title>
+  <meta name="description" content="Connect with licensed top-producing real estate brokers and advisors for luxury homes, apartments, and commercial investments." />
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader-spinner"></div>
+    <div class="loader-logo">Real<span>Estate</span></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fa-solid fa-building-user"></i></div>
+        <div class="logo-text">Real<span>Estate</span></div>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="properties.html" class="nav-link">Properties</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="agents.html" class="nav-link active">Agents</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+        <button class="favorites-nav-btn" aria-label="View Saved Favorites"><i class="fa-solid fa-heart"></i><span class="fav-badge">0</span></button>
+        <button class="hamburger-btn" aria-label="Toggle Mobile Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Header -->
+  <section style="background: linear-gradient(135deg, var(--secondary) 0%, #1E293B 100%); color: #FFFFFF; padding: 7rem 0 4rem; text-align: center;">
+    <div class="container">
+      <span class="section-subtitle" style="background: rgba(37, 99, 235, 0.2); color: #60A5FA;">Expert Guidance</span>
+      <h1 class="hero-title" style="font-size: 2.75rem; margin-top: 0.5rem; margin-bottom: 0.5rem;">Meet Our Top Real Estate Specialists</h1>
+      <p style="color: #CBD5E1; max-width: 600px; margin: 0 auto;">Partner with licensed local market leaders committed to delivering seamless transactions and max value.</p>
+    </div>
+  </section>
+
+  <!-- Agents Grid Section -->
+  <section class="section-padding">
+    <div class="container">
+      <div id="agentsGrid" class="feature-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+        <!-- Rendered by js/app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Agent Contact Modal -->
+  <div id="agentContactModal" class="modal-overlay">
+    <div class="modal-container">
+      <button class="modal-close-btn" aria-label="Close Modal"><i class="fa-solid fa-xmark"></i></button>
+      <h2 style="margin-bottom: 0.5rem;"><i class="fa-solid fa-paper-plane" style="color: var(--primary);"></i> Send Message to Agent</h2>
+      <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Fill out the form below and the specialist will reach out directly within 2 hours.</p>
+
+      <form class="validate-contact-form" style="display: flex; flex-direction: column; gap: 1rem;">
+        <div class="form-group-item">
+          <label>Target Agent</label>
+          <input type="text" id="modalAgentName" class="form-control" readonly style="background-color: var(--bg-primary); cursor: not-allowed; padding-left: 1rem;" />
+        </div>
+        <div class="form-group-item">
+          <label>Your Name</label>
+          <input type="text" name="name" class="form-control" placeholder="Jane Doe" required style="padding-left: 1rem;" />
+        </div>
+        <div class="form-group-item">
+          <label>Your Email</label>
+          <input type="email" name="email" class="form-control" placeholder="jane@example.com" required style="padding-left: 1rem;" />
+        </div>
+        <div class="form-group-item">
+          <label>Your Phone</label>
+          <input type="tel" name="phone" class="form-control" placeholder="+1 (555) 000-0000" style="padding-left: 1rem;" />
+        </div>
+        <div class="form-group-item">
+          <label>Message</label>
+          <textarea name="message" class="form-control" rows="4" placeholder="I would like to schedule a viewing..." style="padding-left: 1rem;" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;"><i class="fa-solid fa-paper-plane"></i> Send Direct Message</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo footer-logo">
+            <div class="logo-icon"><i class="fa-solid fa-building-user"></i></div>
+            <div class="logo-text">Real<span>Estate</span></div>
+          </a>
+          <p class="footer-desc">Your trusted real estate partner for luxury residential villas, penthouses, commercial headquarters, and land investments worldwide.</p>
+        </div>
+        <div>
+          <h4 class="footer-column-title">Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="properties.html">Featured Properties</a>
+            <a href="about.html">About Company</a>
+            <a href="agents.html">Meet Our Agents</a>
+            <a href="contact.html">Contact Us</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-column-title">Property Types</h4>
+          <div class="footer-links">
+            <a href="properties.html?type=Apartment">Luxury Apartments</a>
+            <a href="properties.html?type=Villa">Modern Villas</a>
+            <a href="properties.html?type=Commercial">Commercial Assets</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-column-title">Contact Info</h4>
+          <div class="contact-info-list">
+            <div class="contact-info-item"><i class="fa-solid fa-location-dot"></i><span>500 Wilshire Blvd, Beverly Hills, CA 90210</span></div>
+            <div class="contact-info-item"><i class="fa-solid fa-phone"></i><span>+1 (800) 555-REAL</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 RealEstate Inc. All rights reserved. Built with HTML5, CSS3 & Vanilla JavaScript.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Favorites Wishlist Modal -->
+  <div id="favoritesModal" class="modal-overlay">
+    <div class="modal-container" style="max-width: 900px;">
+      <button class="modal-close-btn" aria-label="Close Wishlist Modal"><i class="fa-solid fa-xmark"></i></button>
+      <h2 style="margin-bottom: 0.5rem;"><i class="fa-solid fa-heart" style="color: #EF4444;"></i> Saved Favorite Properties</h2>
+      <div id="favoritesGrid" class="property-grid" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));"></div>
+    </div>
+  </div>
+
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

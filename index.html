@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RealEstate - Find Your Dream Home | Modern Luxury Properties</title>
+  <meta name="description" content="Discover modern luxury apartments, villas, offices, and homes for sale or rent with RealEstate." />
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader-spinner"></div>
+    <div class="loader-logo">Real<span>Estate</span></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fa-solid fa-building-user"></i></div>
+        <div class="logo-text">Real<span>Estate</span></div>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="properties.html" class="nav-link">Properties</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="agents.html" class="nav-link">Agents</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Dark / Light Mode Toggle -->
+        <button class="theme-toggle-btn" aria-label="Toggle Theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <!-- Favorites Drawer Toggle -->
+        <button class="favorites-nav-btn" aria-label="View Saved Favorites">
+          <i class="fa-solid fa-heart"></i>
+          <span class="fav-badge">0</span>
+        </button>
+
+        <!-- Hamburger Menu -->
+        <button class="hamburger-btn" aria-label="Toggle Mobile Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1920&q=80');">
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content reveal-up">
+        <div class="hero-tagline">
+          <i class="fa-solid fa-award"></i> Premier Real Estate Agency
+        </div>
+        <h1 class="hero-title">Find Your Dream Home With Confidence</h1>
+        <p class="hero-subtitle">Discover over 1,500+ verified luxury properties, modern apartments, and oceanfront villas across prime global locations.</p>
+
+        <!-- Search Form Component -->
+        <div class="hero-search-box">
+          <div class="search-tabs">
+            <button type="button" class="search-tab-btn active"><i class="fa-solid fa-key"></i> Buy Property</button>
+            <button type="button" class="search-tab-btn"><i class="fa-solid fa-file-contract"></i> Rent Property</button>
+          </div>
+
+          <form id="heroSearchForm" class="search-form-grid">
+            <div class="form-group-item">
+              <label><i class="fa-solid fa-location-dot"></i> Location</label>
+              <div class="form-input-wrapper">
+                <i class="fa-solid fa-city"></i>
+                <select id="heroCitySelect" class="form-control">
+                  <option value="All">All Cities</option>
+                  <option value="Los Angeles">Los Angeles</option>
+                  <option value="New York">New York</option>
+                  <option value="San Francisco">San Francisco</option>
+                  <option value="Miami">Miami</option>
+                  <option value="Denver">Denver</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group-item">
+              <label><i class="fa-solid fa-house"></i> Property Type</label>
+              <div class="form-input-wrapper">
+                <i class="fa-solid fa-building"></i>
+                <select id="heroTypeSelect" class="form-control">
+                  <option value="All">All Types</option>
+                  <option value="Apartment">Apartment</option>
+                  <option value="Villa">Villa</option>
+                  <option value="Commercial">Commercial</option>
+                  <option value="Office">Office</option>
+                  <option value="Luxury Home">Luxury Home</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group-item">
+              <label><i class="fa-solid fa-tag"></i> Price Range</label>
+              <div class="form-input-wrapper">
+                <i class="fa-solid fa-dollar-sign"></i>
+                <select id="heroPriceSelect" class="form-control">
+                  <option value="All">Any Price</option>
+                  <option value="500000">$100k - $500k</option>
+                  <option value="2000000">$500k - $2M</option>
+                  <option value="5000000">$2M - $5M+</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group-item">
+              <label>&nbsp;</label>
+              <button type="submit" class="btn btn-primary" style="height: 48px; width: 100%;">
+                <i class="fa-solid fa-magnifying-glass"></i> Search Now
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Properties Section -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-subtitle">Exclusive Listings</span>
+        <h2 class="section-title">Featured Properties</h2>
+        <p class="section-description">Handpicked premium properties offering exceptional craftsmanship, modern design, and breathtaking locations.</p>
+      </div>
+
+      <div id="featuredPropertiesGrid" class="property-grid">
+        <!-- Rendered by app.js -->
+      </div>
+
+      <div class="text-center" style="margin-top: 3.5rem;">
+        <a href="properties.html" class="btn btn-primary"><i class="fa-solid fa-grid-2"></i> Browse All Properties</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Property Categories Section -->
+  <section class="section-padding" style="background-color: var(--bg-surface); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-subtitle">Explore Types</span>
+        <h2 class="section-title">Property Categories</h2>
+        <p class="section-description">Find the ideal space tailored to your lifestyle, from urban lofts to secluded luxury mountain villas.</p>
+      </div>
+
+      <div id="categoryGrid" class="category-grid">
+        <!-- Rendered by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-subtitle">Our Advantage</span>
+        <h2 class="section-title">Why Choose RealEstate</h2>
+        <p class="section-description">We combine industry expertise, transparent advice, and advanced technology to make property buying simple.</p>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-card reveal-up">
+          <div class="feature-icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3 class="feature-card-title">Verified Properties</h3>
+          <p class="feature-card-text">Every listing undergoes strict legal and physical background verification before being listed on our platform.</p>
+        </div>
+
+        <div class="feature-card reveal-up delay-1">
+          <div class="feature-icon-box"><i class="fa-solid fa-user-check"></i></div>
+          <h3 class="feature-card-title">Trusted Agents</h3>
+          <p class="feature-card-text">Work directly with licensed, highly experienced real estate specialists with proven track records in your area.</p>
+        </div>
+
+        <div class="feature-card reveal-up delay-2">
+          <div class="feature-icon-box"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+          <h3 class="feature-card-title">Easy Financing</h3>
+          <p class="feature-card-text">Access competitive mortgage rates and flexible payment plans backed by top financial institution partners.</p>
+        </div>
+
+        <div class="feature-card reveal-up delay-3">
+          <div class="feature-icon-box"><i class="fa-solid fa-headset"></i></div>
+          <h3 class="feature-card-title">24/7 Support</h3>
+          <p class="feature-card-text">Our dedicated client support team is always available to answer your questions and schedule property viewings.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Counter Section -->
+  <section class="stats-section section-padding">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item reveal-up">
+          <div class="stat-number" data-target="500" data-suffix="+">500+</div>
+          <div class="stat-label">Properties Listed</div>
+        </div>
+        <div class="stat-item reveal-up delay-1">
+          <div class="stat-number" data-target="120" data-suffix="+">120+</div>
+          <div class="stat-label">Expert Agents</div>
+        </div>
+        <div class="stat-item reveal-up delay-2">
+          <div class="stat-number" data-target="2000" data-suffix="+">2000+</div>
+          <div class="stat-label">Happy Clients</div>
+        </div>
+        <div class="stat-item reveal-up delay-3">
+          <div class="stat-number" data-target="15" data-suffix="+">15+</div>
+          <div class="stat-label">Cities Covered</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Properties Grid -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-subtitle">Fresh On The Market</span>
+        <h2 class="section-title">Latest Added Properties</h2>
+        <p class="section-description">Be the first to inspect the newest residential and commercial property additions.</p>
+      </div>
+
+      <div id="latestPropertiesGrid" class="property-grid">
+        <!-- Rendered by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Slider Section -->
+  <section class="testimonial-section section-padding">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-subtitle">Client Reviews</span>
+        <h2 class="section-title">What Our Clients Say</h2>
+      </div>
+
+      <div class="testimonial-slider-wrapper reveal-zoom">
+        <div class="testimonial-track">
+          <div class="testimonial-card">
+            <i class="fa-solid fa-quote-left quote-icon"></i>
+            <p class="testimonial-text">"The team made finding our dream home in Beverly Hills an absolute breeze. Sophia listened to every detail we wanted and delivered a property that surpassed all expectations!"</p>
+            <div class="rating-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <div class="client-info">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" class="client-avatar" alt="Client Avatar" />
+              <div class="client-details">
+                <h4>Sarah & Robert Jenkins</h4>
+                <p>Villa Buyers in Beverly Hills</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <i class="fa-solid fa-quote-left quote-icon"></i>
+            <p class="testimonial-text">"Securing 6,500 sq ft of prime SoMa office space within 2 weeks was incredible. Professionalism, transparent negotiation, and unmatched market insight!"</p>
+            <div class="rating-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <div class="client-info">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" class="client-avatar" alt="Client Avatar" />
+              <div class="client-details">
+                <h4>Michael Chang</h4>
+                <p>Tech CEO & Commercial Client</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <i class="fa-solid fa-quote-left quote-icon"></i>
+            <p class="testimonial-text">"Marcus Vance guided us through the complex NYC penthouse market with extreme care. We closed smoothly and could not be happier with our Central Park views."</p>
+            <div class="rating-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <div class="client-info">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80" class="client-avatar" alt="Client Avatar" />
+              <div class="client-details">
+                <h4>Amanda Thorne</h4>
+                <p>Penthouse Owner in Manhattan</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slider-controls">
+          <button class="slider-btn testimonial-prev" aria-label="Previous Review"><i class="fa-solid fa-arrow-left"></i></button>
+          <div class="slider-dots"></div>
+          <button class="slider-btn testimonial-next" aria-label="Next Review"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="newsletter-card reveal-up">
+        <h2 class="newsletter-title">Subscribe to Property Alerts</h2>
+        <p class="newsletter-desc">Get instant notification when new prime luxury listings match your criteria.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email address..." required />
+          <button type="submit"><i class="fa-solid fa-paper-plane"></i> Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo footer-logo">
+            <div class="logo-icon"><i class="fa-solid fa-building-user"></i></div>
+            <div class="logo-text">Real<span>Estate</span></div>
+          </a>
+          <p class="footer-desc">Your trusted real estate partner for luxury residential villas, penthouses, commercial headquarters, and land investments worldwide.</p>
+          <div class="social-links">
+            <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-icon" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-column-title">Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="properties.html">Featured Properties</a>
+            <a href="about.html">About Company</a>
+            <a href="agents.html">Meet Our Agents</a>
+            <a href="contact.html">Contact Us</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-column-title">Property Types</h4>
+          <div class="footer-links">
+            <a href="properties.html?type=Apartment">Luxury Apartments</a>
+            <a href="properties.html?type=Villa">Modern Villas</a>
+            <a href="properties.html?type=Commercial">Commercial Assets</a>
+            <a href="properties.html?type=Office">Corporate Offices</a>
+            <a href="properties.html?type=Land">Land & Plots</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-column-title">Contact Info</h4>
+          <div class="contact-info-list">
+            <div class="contact-info-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>500 Wilshire Blvd, Suite 1200, Beverly Hills, CA 90210</span>
+            </div>
+            <div class="contact-info-item">
+              <i class="fa-solid fa-phone"></i>
+              <span>+1 (800) 555-REAL</span>
+            </div>
+            <div class="contact-info-item">
+              <i class="fa-solid fa-envelope"></i>
+              <span>contact@realestate-luxury.com</span>
+            </div>
+            <div class="contact-info-item">
+              <i class="fa-solid fa-clock"></i>
+              <span>Mon - Sat: 9:00 AM - 7:00 PM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 RealEstate Inc. All rights reserved. Built with HTML5, CSS3 & Vanilla JavaScript.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#" style="color: #94A3B8;">Privacy Policy</a>
+          <a href="#" style="color: #94A3B8;">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Favorites Wishlist Modal -->
+  <div id="favoritesModal" class="modal-overlay">
+    <div class="modal-container" style="max-width: 900px;">
+      <button class="modal-close-btn" aria-label="Close Wishlist Modal"><i class="fa-solid fa-xmark"></i></button>
+      <h2 style="margin-bottom: 0.5rem;"><i class="fa-solid fa-heart" style="color: #EF4444;"></i> Saved Favorite Properties</h2>
+      <p style="color: var(--text-muted); margin-bottom: 2rem;">Manage your saved listings stored securely in your browser local storage.</p>
+      
+      <div id="favoritesGrid" class="property-grid" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));">
+        <!-- Rendered by app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll To Top Button -->
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Application Entry Script -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

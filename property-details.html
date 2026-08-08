@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Property Details | Modern Real Estate</title>
+  <meta name="description" content="View property specifications, image gallery, floor plan, amenities, and contact listing agent." />
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader-spinner"></div>
+    <div class="loader-logo">Real<span>Estate</span></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fa-solid fa-building-user"></i></div>
+        <div class="logo-text">Real<span>Estate</span></div>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="properties.html" class="nav-link active">Properties</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="agents.html" class="nav-link">Agents</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+        <button class="favorites-nav-btn" aria-label="View Saved Favorites"><i class="fa-solid fa-heart"></i><span class="fav-badge">0</span></button>
+        <button class="hamburger-btn" aria-label="Toggle Mobile Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Property Details Container -->
+  <section class="section-padding" style="padding-top: 7rem;">
+    <div class="container">
+      <div id="propertyDetailsWrapper">
+        <!-- Rendered dynamically by js/app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo footer-logo">
+            <div class="logo-icon"><i class="fa-solid fa-building-user"></i></div>
+            <div class="logo-text">Real<span>Estate</span></div>
+          </a>
+          <p class="footer-desc">Your trusted real estate partner for luxury residential villas, penthouses, commercial headquarters, and land investments worldwide.</p>
+        </div>
+        <div>
+          <h4 class="footer-column-title">Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="properties.html">Featured Properties</a>
+            <a href="about.html">About Company</a>
+            <a href="agents.html">Meet Our Agents</a>
+            <a href="contact.html">Contact Us</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-column-title">Property Types</h4>
+          <div class="footer-links">
+            <a href="properties.html?type=Apartment">Luxury Apartments</a>
+            <a href="properties.html?type=Villa">Modern Villas</a>
+            <a href="properties.html?type=Commercial">Commercial Assets</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-column-title">Contact Info</h4>
+          <div class="contact-info-list">
+            <div class="contact-info-item"><i class="fa-solid fa-location-dot"></i><span>500 Wilshire Blvd, Beverly Hills, CA 90210</span></div>
+            <div class="contact-info-item"><i class="fa-solid fa-phone"></i><span>+1 (800) 555-REAL</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 RealEstate Inc. All rights reserved. Built with HTML5, CSS3 & Vanilla JavaScript.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Favorites Wishlist Modal -->
+  <div id="favoritesModal" class="modal-overlay">
+    <div class="modal-container" style="max-width: 900px;">
+      <button class="modal-close-btn" aria-label="Close Wishlist Modal"><i class="fa-solid fa-xmark"></i></button>
+      <h2 style="margin-bottom: 0.5rem;"><i class="fa-solid fa-heart" style="color: #EF4444;"></i> Saved Favorite Properties</h2>
+      <div id="favoritesGrid" class="property-grid" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));"></div>
+    </div>
+  </div>
+
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

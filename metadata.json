@@ -1,0 +1,6 @@
+{
+  "name": "Modern Real Estate Website",
+  "description": "A fully responsive, modern, and professional real estate website built with HTML5, CSS3, and Vanilla JavaScript with interactive property filtering, search, favorite properties management, dark/light mode, and smooth animations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
